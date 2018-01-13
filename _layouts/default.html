@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="{{ site.baseurl }}/">
+          <!-- <h2 class="nav-title">{{ site.title }}</h2> -->
+          <div class="logo-wrap">
+            <img src="{{ site.baseurl }}/assets/logo.svg" alt="Logo VI Cryptos">
+          </div>
+        </a>
+        <ul>
+          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+          <li><a href="{{ site.baseurl }}/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <div class="blurb">
+        <div class="title">Donate</div>
+        <div class="type">
+          <div>            
+            <p><span>BTC:</span> 1rkhHDicMfqw4kwsi9jwF7Y9VchkA1Jg5</p>
+          </div>
+          <div>
+            <p><span>ETH:</span> 0x2689b97a1d0c0c3eec6d156a88fa7a2471cf6b37</p>
+          </div>
+          <div>
+            <p><span>LTC:</span> LaAGf4tL9ipHe14cBchbQtpGPBVaNyv1FQ</p>
+          </div>
+          <div>
+            <p style="color: #999;"><small><em>By donating you help keep this site up and running with daily content.</em></small></p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="blurb">
+        <div class="title">VI Cryptos</div>
+        <ul class="links">
+          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+          <li><a href="{{ '/disclaimer' | prepend: site.baseurl }}">Disclaimer</a></li>
+        </ul>
+      </div>
+
+      
+
+      <div class="copy">
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}.
+      </div>
+    </footer>
+  </body>
+</html>

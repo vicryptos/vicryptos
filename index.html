@@ -1,0 +1,76 @@
+---
+layout: default
+title: Home
+---
+
+<div class="catalogue">
+  {% for post in paginator.posts %}
+    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
+      <div>
+        <h1 class="catalogue-title">{{ post.title }}</h1>
+        <div class="catalogue-line"></div>
+        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+
+        <img src="{{ post.thumbnail | prepend: site.baseurl }}" />
+
+        {% if post.embed %}
+          <iframe width="560" height="315" src="{{ post.embed }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        {% endif %}
+        
+        <p>
+          {{ post.content | truncatewords: 30 | strip_html }}
+        </p>
+
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+
+<div class="sidebar">
+  <h1 class="catalogue-title">Markets</h1>
+  <div class="spacer" style="height:40px;"></div>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+  <div class="spacer" style="height:10px;"></div>
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+  <div class="spacer" style="height:40px;"></div>
+
+  <h1 class="catalogue-title">Hot Topics</h1>
+  <div class="spacer" style="height:30px;"></div>
+  
+  <div class="blurb">
+    <h4>Favorite Sites</h4>
+    <p><a href="http://www.coinmarketcap.com" target="_blank">Coinmarketcap</a></p>
+    <p><a href="http://www.coinbase.com" target="_blank">Coinbase</a></p>
+    <p><a href="http://www.gdax.com" target="_blank">Gdax</a></p>
+    <p><a href="http://www.coindesk.com" target="_blank">Coindesk</a></p>
+    <p><a href="http://www.livecoinwatch.com" target="_blank">Livecoinwatch</a></p>
+  </div>
+
+  <div class="blurb">
+    <h4>Top picks of the week</h4>
+    <p><a href="http://www..com" target="_blank">ETH</a></p>
+    <p><a href="http://www..com" target="_blank">PKT</a></p>
+    <p><a href="http://www..com" target="_blank">WTC</a></p>
+    <p><a href="http://www..com" target="_blank">VIBE</a></p>
+    <p><a href="http://www..com" target="_blank">COB</a></p>
+  </div>
+
+  <div class="blurb">
+    <h4>We Told You So</h4>
+    <span>Dear readers,</span>
+    <p>View list of the top pics you may have missed. Told ya'</p>
+  </div>
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
+
+  <span>{{ paginator.page }}</span>
+</div>

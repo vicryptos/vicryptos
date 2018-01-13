@@ -1,0 +1,182 @@
+/*------------------------------------------------------------------------*\
+    = Header
+\*------------------------------------------------------------------------*/
+
+.logo-wrap {
+  max-width: 120px;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 80%;
+}
+
+footer {
+  margin: 100px auto 0 auto;
+  width: 100%;
+  background: #353535;
+  padding: 80px 50px;
+  .blurb {
+    display: inline-block;
+    width: 100%;
+    // max-width: 275px;
+    max-width: 49%;
+    vertical-align: top;
+    text-align: left;
+      font-family: 'Nunito Sans', sans-serif;
+    .title {
+      text-transform: uppercase;
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+        margin-bottom: 20px;
+        a {
+          color: #fff;
+          font-family: 'Nunito Sans', sans-serif;
+        }
+      }
+    }
+    .type {
+      div {
+        margin-bottom: 25px;
+        span {
+          color: #39b54a;
+        }
+        p {
+          margin-top: 5px;
+          color: #fff;
+        }
+      }
+    }
+  } 
+  .copy {
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: left;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1125px;
+  padding: 0 30px;
+  iframe {
+    width: 100%;
+  }
+  .catalogue {
+    width: 100%;
+    max-width: 70%;
+    display: inline-block;
+    padding: 0 30px;
+    img {
+      margin: 30px 0;
+    }
+  }
+  .sidebar {
+    float: right;
+    display: inline-block;
+    width: 100%;
+    max-width: 25%;
+    padding-top: 2em;
+    .blurb {
+      margin-bottom: 40px;
+      h4 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.nav-container {
+  padding: 0 50px;
+}
+
+.nav {
+  box-shadow: 0 2px 2px -2px $shadow-color;
+  overflow: auto;
+  margin-bottom: 100px;
+
+  &-container {
+    margin: 1rem auto;
+    position: relative;
+    text-align: center;
+  }
+
+  &-title {
+    @include transition(all .2s ease-out);
+    color: $default-color;
+    display: inline-block;
+    margin: 0;
+    padding-right: .2rem;
+
+    &:hover,
+    &:focus {
+      opacity: .6;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    @include transition(all .2s ease-out);
+    color: $default-color;
+    display: inline-block;
+    opacity: .6;
+    padding: 0 2rem 0 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  a {
+    color: $default-color;
+    font-family: $sans-serif;
+    &:hover,
+    &:focus {
+      color: #39b54a;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .nav {
+    &-container {
+      text-align: left;
+    }
+
+    ul {
+      bottom: 0;
+      position: absolute;
+      right: 50px;
+    }
+  }
+}
+
+footer {
+  font-family: $serif-secondary;
+  text-align: center;
+
+  span {
+    color: $default-color;
+    font-size: .8rem;
+  }
+}
